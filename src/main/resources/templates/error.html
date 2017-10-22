@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>Confirmation</title>
+	<div th:replace="fragments/header"></div>
+	<link rel ="stylesheet" href="/css/bootstrap.min.css" />
+</head>
+
+<body>
+<div class="container">
+
+    <hr/>
+
+   
+ 
+    	<div class="container-fluid">
+        <center><h1>Error !</h1></center>
+        <center><h5 th:text="${error}">Teks bila error</h5></center>
+    
+	</div>
+</div>
+</body>
+<div th:replace="fragments/footer"></div>
+ </html>

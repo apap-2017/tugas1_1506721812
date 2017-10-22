@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<link rel="stylesheet" href="/css/bootstrap.min.css" />
+</head>
+<body>
+	<div th:header="header">
+		<nav class="navbar  navbar-expand-lg  navbar-dark  bg-dark">
+			<a class="navbar-brand" href="#"> Sistem Informasi Penduduk </a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse"
+				data-target="#navbarSupportedContent"
+				aria-controls="navbarSupportedContent" aria-expanded="false"
+				aria-label="Toggle  navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			
+			<div class="collapse  navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav  mr-auto">
+					<li class="nav-item">
+						<a class="nav-link" href="/">Home</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="/penduduk/tambah">Tambah Penduduk</a>	
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="/keluarga/tambah">Tambah Keluarga</a>	
+					</li> 
+					<li class="nav-item">
+						<a class="nav-link" href="/penduduk/ubah">Ubah Data Penduduk</a>	
+					</li> 
+					<li class="nav-item">
+						<a class="nav-link" href="/keluarga/ubah">Ubah Data Keluarga</a>	
+					</li> 
+					<li class="nav-item">
+						<a class="nav-link" href="/penduduk/cari">Cari Data Penduduk</a>	
+					</li> 
+				</ul>
+			</div>
+		</nav>
+	</div>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>NKK tidak ditemukan</title>
+	<div th:replace="fragments/header"></div>
+	<link rel ="stylesheet" href="/css/bootstrap.min.css" />
+</head>
+<body>
+<div class="container">
+
+    <hr/>
+    <!-- Title -->
+    <div class="container-fluid">
+        <center><h1 class="bold">Error !</h1></center>
+        <center><h5 th:text="'NKK = ' + ${nkk} + ' tidak ditemukan' ">Error</h5></center>
+    </div>
+
+
+</div>
+</body>
+<div th:replace="fragments/footer"></div>
+</html>

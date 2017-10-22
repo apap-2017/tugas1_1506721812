@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>Cari Kecamatan</title>
+	<div th:replace="fragments/header"></div>
+	<link rel ="stylesheet" href="/css/bootstrap.min.css" />
+</head>
+
+<body>
+<div class="container">
+
+    <hr/>
+
+   <!-- Title -->
+    <div class="container-fluid">
+        <h3 th:text="'Lihat Data Penduduk Berdasarkan Kecamatan di ' + ${kota.nama_kota} + ', Kecamatan ' + ${kecamatan.nama_kecamatan} + ', Kelurahan ' + ${kelurahan.nama_kelurahan}"></h3>
+    </div>
+
+    <hr/>
+
+    <!-- Info Section -->
+    <div class="container-fluid">
+        <div class="row">
+
+            <!-- Table Termuda -->
+            <div class="col-lg-4">
+                <h4>Penduduk Dengan Usia Termuda</h4>
+                <table class="table table-hover table-responsive">
+                    <tbody>
+                        <tr>
+                            <td>NIK</td>
+                            <td><a th:href="'/penduduk?nik=' + ${muda.nik}" th:text="${muda.nik}">NIK</a></td>
+                        </tr>
+                        <tr>
+                            <td>Nama</td>
+                            <td th:text="${muda.nama}">Nama Termuda</td>
+                        </tr>
+                        <tr>
+                            <td>Tanggal Lahir</td>
+                            <td th:text="${muda.tanggal_lahir}">Tanggal Lahir Termuda</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Table Tertua -->
+            <div class="col-lg-4">
+                <h4>Penduduk Dengan Usia Tertua</h4>
+                <table class="table table-hover table-responsive">
+                    <tbody>
+                    <tr>
+                        <td>NIK</td>
+                        <td><a th:href="'/penduduk?nik=' + ${tua.nik}" th:text="${tua.nik}">NIK</a></td>
+                    </tr>
+                    <tr>
+                        <td>Nama</td>
+                        <td th:text="${tua.nama}">Nama Tertua</td>
+                    </tr>
+                    <tr>
+                        <td>Tanggal Lahir</td>
+                        <td th:text="${tua.tanggal_lahir}">Tanggal Lahir Tertua</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <hr/>
+
+    <div class="container-fluid">
+
+        <!-- Table Hasil Pencarian -->
+        <table id="table_id" class="table table-hover table-responsive">
+            <thead>
+            <tr>
+                <th class="bold">NIK</th>
+                <th class="bold">Nama</th>
+                <th class="bold">Jenis Kelamin</th>
+            </tr>
+            </thead>
+            <tbody>
+                <tr th:each="penduduk : ${penduduk}">
+                    <td><a th:href="'/penduduk?nik=' + ${penduduk.nik}" th:text="${penduduk.nik}">NIK</a></td>
+                    <td th:text="${penduduk.nama}">Nama penduduk</td>
+                    <td th:text="${penduduk.jenis_kelamin}">Jenis Kelamin penduduk</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+<div th:replace="fragments/footer"></div>
+</html>

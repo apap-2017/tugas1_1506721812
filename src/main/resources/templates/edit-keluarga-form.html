@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>Tambah Keluarga</title>
+	<div th:replace="fragments/header"></div>
+	<link rel ="stylesheet" href="/css/bootstrap.min.css" />
+</head>
+
+<body>
+<div class="container">
+
+    <hr/>
+
+   
+    <div class="container-fluid">
+    	<form class="inputAction add" method="post" th:action="'/keluarga/ubah/' + ${keluarga.nomor_kk}" th:object="${keluarga}">
+      		<center><h3>Tambah Keluarga</h3></center>
+      	
+      		<div class="form-group">
+      		<label for="alamat">Alamat</label>
+      		<input type="text" class="form-control" required="true" name="alamat" 
+      		id="alamat" maxlength="256" th:value="${keluarga.alamat}" placeholder="Masukkan Alamat Lengkap Anda" />
+      		</div>
+      		
+      		<div class="form-group">
+      		<label for="rt">RT</label>
+      		<input type="number" class="form-control" name="rt" id="rt" maxlength="3" th:value="${keluarga.rt}" th:field="*{rt}" required="true" placeholder="Masukkan Nomor RT Anda"/>
+      		</div>
+      		
+      		<div class="form-group">
+                <label for="rw">RW</label>
+                <input type="number" class="form-control" name="rw" id="rw" maxlength="3" th:value="${keluarga.rw}" th:field="*{rw}" required="true"/>
+            </div>
+
+            <div class="form-group">
+                <label for="id_kelurahan">Kota/Kecamatan/Kelurahan</label>
+                <select class="form-control" name="id_kelurahan" id="id_kelurahan" th:value="${keluarga.id_kelurahan}" th:field="*{id_kelurahan}" required="true">
+                    <option value="" th:disabled="disabled" th:selected="selected">Pilih Kelurahan</option>
+                    <option th:each="kelurahan : ${kelurahan}" th:id="${kelurahan.id}" th:value="${kelurahan.id}" th:text="${kelurahan.nama_kelurahan}">Kelurahan</option>
+                </select>
+            </div>
+      		
+      		
+      		<button type="submit" class="btn btn-info active">Simpan</button>
+      	</form>
+    
+	</div>
+</div>
+</body>
+<div th:replace="fragments/footer"></div>
+ </html>

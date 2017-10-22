@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>Sistem Informasi Kependudukan Online DKI Jakarta</title>
+	<div th:replace="fragments/header"></div>
+	<link rel ="stylesheet" href="/css/bootstrap.min.css" />
+</head>
+
+<body>
+
+
+<div class="container">
+
+  
+    <div class="container-fluid">
+        <center><h1>Sistem Informasi Kependudukan Online </h1></center>
+         <center><h1>Provinsi DKI Jakarta</h1></center>
+ 
+    </div>
+    <hr/>
+
+    <div class="container-fluid">
+        <h4>Lihat Data Penduduk Berdasarkan NIK</h4>
+
+        <form method="get" action="/penduduk">
+            <div class="form-group">
+                <label for="nik"><h6>Masukkan Nomor Induk Kependudukan</h6></label>
+                <input type="number" class="form-control" name="nik" id="nik" required="true"/>
+            </div>
+			<!-- <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Lihat</button>
+            <button type="submit" class="btn btn-default">Lihat</button> -->
+            <button type="submit" class="btn btn-info active">Lihat</button>
+        </form>
+     </div>
+    <hr/>
+
+    
+    <div class="container-fluid">
+        <h4>Lihat Data Keluarga Berdasarkan NKK</h4>
+
+        <form method="get" action="/keluarga">
+            <div class="form-group">
+                <label for="nkk"><h6>Masukkan Nomor Kartu Keluarga</h6></label>
+                <input type="number" class="form-control" name="nkk" id="nkk" required="true"/>
+            </div>
+
+            <button type="submit" class="btn btn-info active">Lihat</button>
+        </form>
+    </div>
+</div>
+</body>
+
+<div th:replace="fragments/footer"></div>
+</html>

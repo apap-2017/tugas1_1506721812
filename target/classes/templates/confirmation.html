@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>Confirmation</title>
+	<div th:replace="fragments/header"></div>
+	<link rel ="stylesheet" href="/css/bootstrap.min.css" />
+</head>
+
+<body>
+<div class="container">
+
+    <hr/>
+
+   
+ 
+    	<div class="container-fluid">
+        <h1 class="bold">Sukses!</h1>
+        <h5 th:text="${confirmation}">Teks jika berhasil</h5>
+    </div>
+
+    <script th:inline="javascript">
+        $(document).ready(function () {
+            var modelAttributeValue = [[${mati}]];
+            setTimeout(
+                function () {
+                if(modelAttributeValue != null){
+                    window.location.href = "http://localhost:8080/penduduk?nik=" + modelAttributeValue;
+                    console.log(modelAttributeValue)
+                }
+                }, 5000);
+        });
+    </script>
+    
+	</div>
+</body>
+<div th:replace="fragments/footer"></div>
+ </html>

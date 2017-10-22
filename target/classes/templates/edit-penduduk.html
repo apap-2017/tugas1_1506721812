@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<div th:replace="fragments/header"></div>
+	<link rel ="stylesheet" href="/css/bootstrap.min.css" />
+	<meta charset="utf-8" />
+ 	<meta name="viewport" content="width=device-width, initial-scale=1" />
+  	<meta name="mobile-web-app-capable" content="yes" />
+  	<title>Ubah Data Penduduk</title>
+</head>
+
+<body>
+<div class="container">
+
+    <hr/>
+
+	<div class="container">
+    	<div class="container-fluid">
+        <form method="get" action="/penduduk">
+        	<center><h3>Ubah Data Penduduk</h3></center>
+            	<div class="form-group">
+                	<label for="nik"><h6>Masukkan Nomor Induk Kependudukan</h6></label>
+                	<input type="number" class="form-control" name="nik" id="nik" required="true"/>
+            	</div>
+            <button type="submit" class="btn btn-info active">Ubah</button>
+        </form>
+     	</div>
+	</div>
+</div>
+</body>
+
+<div th:replace="fragments/footer"></div>
+</html>
